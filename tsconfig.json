@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    // "rootDir": "./src/core",
+    // "outDir": "./src/lib",
+    "baseUrl": "./",
+    "experimentalDecorators": true,
+    "sourceMap": false,
+    // link:https://cloud.tencent.com/developer/section/1476115
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "target": "ES6",
+    "lib": ["es2017", "dom"],
+    "paths": {
+      "@/*": ["./src/*"],
+      "examples/*": ["./examples/*"],
+      "lichFormDesigner/*": ["./src/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
