@@ -1,4 +1,6 @@
-# 表单设计器
+# 表单设计器 ![npmversion](https://img.shields.io/badge/npm-1.0.0-blue)
+
+> 参考 [form-generator](https://github.com/JakHuang/form-generator) 设计的一个库
 
 ## 基于 element-ui + vue 的表单设计器
 
@@ -45,7 +47,7 @@ export default {
 项目必须依赖 vue 和 element-ui
 
 ```
-git clone https://github.com/Liar0320/lichFormDesigner.git
+git clone https://github.com/Liar0320/lich-form-designer.git
 ```
 
 或者你也可以下载 rar 解压

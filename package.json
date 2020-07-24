@@ -1,6 +1,6 @@
 {
   "name": "lich-form-designer",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "scripts": {
     "serve": "npm run serve:example",
     "serve:example": "vue-cli-service serve --mode example",
