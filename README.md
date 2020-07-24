@@ -1,10 +1,10 @@
-# 表单设计器 ![npmversion](https://img.shields.io/badge/npm-1.0.0-blue)
+# 表单设计器 ![](https://img.shields.io/badge/npm-1.0.0-blue)
 
 > 参考 [form-generator](https://github.com/JakHuang/form-generator) 设计的一个库
 
 ## 基于 element-ui + vue 的表单设计器
 
-演示地址：[https://liar0320.github.io/lich-form-designer/dist/index.html](https://liar0320.github.io/lich-form-designer/dist/index.html)
+演示地址：[https://liar0320.github.io/lich-form-designer/dist](https://liar0320.github.io/lich-form-designer/dist/)
 
 ## 使用
 
