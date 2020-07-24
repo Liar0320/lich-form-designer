@@ -5,7 +5,7 @@
         <div class="logo">
           <!-- <img :src="logo" alt="logo" />  -->
           Form Generator
-          <a class="github" href="https://github.com/JakHuang/form-generator" target="_blank">
+          <a class="github" href="https://github.com/Liar0320/lich-form-designer" target="_blank">
             <img src="https://github.githubassets.com/pinned-octocat.svg" alt />
           </a>
         </div>
@@ -122,7 +122,7 @@
             JSON.stringify({
               formConfig: formConf,
               fields: drawingList,
-              formApiValid: formApiValid
+              formApiValid: formApiValid,
             })
           )
         "
@@ -147,7 +147,7 @@ import rightPanel from "./rightPanel";
 
 import parser from "../parser";
 
-const copy = e => JSON.parse(JSON.stringify(e));
+const copy = (e) => JSON.parse(JSON.stringify(e));
 
 import svgIcon from "@/components/svgIcon/svgIcon"; // svg component
 
@@ -160,12 +160,12 @@ export default {
     JsonDrawer,
     rightPanel,
     parser,
-    svgIcon
+    svgIcon,
   },
   computed: {
     activeId() {
       return this.activeData?.id || null;
-    }
+    },
   },
   mounted() {
     console.log("creator");
@@ -175,7 +175,7 @@ export default {
     return {
       activeData: null,
       formConf: {
-        "label-width": "80px"
+        "label-width": "80px",
       },
       formApiValid: [],
       formData: {},
@@ -184,32 +184,32 @@ export default {
       leftComponents: [
         {
           title: "基础型组件",
-          list: basicComponent
+          list: basicComponent,
         },
         {
           title: "表单组件",
-          list: formComponent
+          list: formComponent,
         },
         {
           title: "自定义组件",
-          list: defineComponent
-        }
+          list: defineComponent,
+        },
       ],
       jsonDrawerVisible: false,
-      showPrevModal: false
+      showPrevModal: false,
     };
   },
   provide: {
     updateData() {
       return this.updateAcitveData;
-    }
+    },
   },
   watch: {
     defaultSource(value = {}) {
       this.formConf = value.formConfig || {};
       this.drawingList = value.fields || [];
       this.formApiValid = value.formApiValid || [];
-    }
+    },
   },
   methods: {
     cloneComponent(origin) {
@@ -262,7 +262,7 @@ export default {
       let result = copy({
         formConfig: this.formConf,
         fields: this.drawingList,
-        formApiValid: this.formApiValid
+        formApiValid: this.formApiValid,
         // btnControl: this.btnControl
       });
       // if (!result.btnControl) delete result.btnControl;
@@ -276,8 +276,8 @@ export default {
     },
     save() {
       this.$emit("change", this.getResult());
-    }
-  }
+    },
+  },
 };
 </script>
 
