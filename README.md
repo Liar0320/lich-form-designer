@@ -9,7 +9,7 @@
 ## 使用
 
 ```bash
-npm i lich-form-designer --save-dev
+npm i lich-form-designer
 ```
 
 设计器的使用
