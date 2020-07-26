@@ -16,24 +16,27 @@ npm i lich-form-designer
 
 ```vue
 <template>
-  <div>
-    <lichFormCreator :default-source="source" @change="change" />
+  <div id="app">
+      <lichFormCreator @change="change" />
   </div>
 </template>
+
 <script>
-import { lichFormCreator } from "lichFormDesigner";
-import { getTemplateJson, selectForm, insertOrUpdateForm } from "../apis";
+import  'lich-form-designer/lib/lichFormDesigner.css'
+import { lichFormCreator } from "lich-form-designer";
+
 export default {
-  data(){
-        return{
-            source
-        }
-  },
+  name: 'App',
   components: {
     lichFormCreator
   },
-  methods...
+  methods:{
+    change(e){
+      console.log(e);
+    }
+  }
 }
+</script>
 ```
 
 解析器的使用
