@@ -10,7 +10,8 @@
     "build:creator": "vue-cli-service build --target lib --name lichFormCreator --dest ./lib/creator ./src/components/creator/index.vue",
     "build:parser": "vue-cli-service build --target lib --name lichFormParser --dest ./lib/parser ./src/components/parser/index.vue",
     "compileCore": "tsc --rootDir ./src/core --outDir ./src/lib & npm run lint --fix",
-    "compileCoreOnSave": "tsc --rootDir ./src/core --outDir ./src/lib --watch & npm run lint --fix "
+    "compileCoreOnSave": "tsc --rootDir ./src/core --outDir ./src/lib --watch & npm run lint --fix ",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
     "clipboard": "^2.0.6",
@@ -28,7 +29,9 @@
     "@vue/cli-service": "~4.4.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
+    "commitizen": "^4.1.2",
     "core-js": "^3.6.5",
+    "cz-conventional-changelog": "^3.2.0",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-vue": "^6.2.2",
@@ -40,6 +43,11 @@
     "typescript": "^3.9.6",
     "vue-template-compiler": "^2.6.11",
     "webpack-node-externals": "^1.7.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "main": "lib/designer/lichFormDesigner.umd.js",
   "module": "lib/designer/lichFormDesigner.common.js",
