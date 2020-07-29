@@ -4,9 +4,10 @@
   "scripts": {
     "serve": "npm run serve:example",
     "serve:example": "vue-cli-service serve --mode example",
-    "build": "vue-cli-service build --target lib --name lichFormDesigner --dest ./lib/designer ./src/index.js",
+    "build": "npm run build:example && npm run build:designer && npm run build:creator && npm run  build:parser",
     "build:example": "set NODE_ENV=production&& vue-cli-service build --mode example",
     "lint": "vue-cli-service lint",
+    "build:designer":"vue-cli-service build --target lib --name lichFormDesigner --dest ./lib/designer ./src/index.js",
     "build:creator": "vue-cli-service build --target lib --name lichFormCreator --dest ./lib/creator ./src/components/creator/index.vue",
     "build:parser": "vue-cli-service build --target lib --name lichFormParser --dest ./lib/parser ./src/components/parser/index.vue",
     "compileCore": "tsc --rootDir ./src/core --outDir ./src/lib & npm run lint --fix",
