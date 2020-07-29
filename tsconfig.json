@@ -14,7 +14,9 @@
       "@/*": ["./src/*"],
       "examples/*": ["./examples/*"],
       "lichFormDesigner/*": ["./src/*"]
-    }
+    },
+    "allowSyntheticDefaultImports": true
   },
+
   "exclude": ["node_modules"]
 }

@@ -44,9 +44,9 @@ module.exports = {
       })
       .end();
 
-    let cdn = null;
     if (process.env.NODE_ENV === "production") {
       // #region 启用第三方cdn加速
+      let cdn = null;
       var externals = {
         vue: "Vue",
         "element-ui": "ELEMENT",
@@ -77,21 +77,13 @@ module.exports = {
         ]
       };
 
+      config.plugin("html").tap(args => {
+        if (cdn) args[0].cdn = cdn;
+        return args;
+      });
+
       // console.log(config.plugin("html"));
       // #endregion
-    } else {
-      cdn = {
-        css: [
-          // element-ui css
-          "./node_modules/element-ui/lib/theme-chalk/index.css"
-        ],
-        js: []
-      };
     }
-
-    config.plugin("html").tap(args => {
-      if (cdn) args[0].cdn = cdn;
-      return args;
-    });
   }
 };
