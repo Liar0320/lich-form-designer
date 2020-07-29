@@ -4,9 +4,16 @@
       <el-divider>通用</el-divider>
       <div>
         <el-form :model="formData" label-width="100px" size="small">
-          <el-form-item label="是否展示">
-            <el-checkbox v-model="formData['isRender']"></el-checkbox>
-          </el-form-item>
+          <el-tooltip content="相当于v-if" placement="top">
+            <el-form-item label="是否渲染">
+              <el-checkbox v-model="formData['isRender']"></el-checkbox>
+            </el-form-item>
+          </el-tooltip>
+          <el-tooltip content="相当于v-show" placement="top">
+            <el-form-item label="是否展示">
+              <el-checkbox v-model="formData['isShow']"></el-checkbox>
+            </el-form-item>
+          </el-tooltip>
           <el-form-item label="控件类型">
             <el-select v-model="formData['uuid']" placeholder="" @change="controlChange" :filterable="true">
               <el-option v-for="item in controlList" :key="item.uuid" :label="item.name" :value="item.uuid"> </el-option>

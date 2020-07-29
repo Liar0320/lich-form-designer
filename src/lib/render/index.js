@@ -46,7 +46,7 @@ export function renderItem(h, formConfig, formMap) {
       props: Object.assign({}, __layoutConfig__.props),
       attrs: Object.assign({}, __layoutConfig__.attrs),
       class: __layoutConfig__.class,
-      style: __layoutConfig__.style
+      style: formConfig.isShow === false ? `display:none;${__layoutConfig__.style}` : __layoutConfig__.style
     },
     [
       h(
@@ -80,9 +80,11 @@ export function renderItem(h, formConfig, formMap) {
 }
 export function renderCollection(h, formConfigList) {
   let { formMap } = this;
-  return formConfigList.map(formConfig => {
-    return renderChild.call(this, h, formConfig, formConfigList, formMap);
-  });
+  return formConfigList
+    .map(formConfig => {
+      return formConfig.isRender === false ? null : renderChild.call(this, h, formConfig, formConfigList, formMap);
+    })
+    .filter(v => !!v);
 }
 export function renderChild(h, formConfig, formConfigList, formMap) {
   let { __layout__ } = formConfig;

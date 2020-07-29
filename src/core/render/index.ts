@@ -1,4 +1,4 @@
-import Vue from "Vue";
+import Vue, { VNode } from "Vue";
 import { FormElemntConfig, ISuerDefineProps } from "../define";
 import componentsPack from "../services/index.js";
 import componentRegister from "../defaultComponents/index";
@@ -55,7 +55,7 @@ export function renderItem(h: Vue.CreateElement, formConfig: FormElemntConfig, f
       props: { ...__layoutConfig__.props },
       attrs: { ...__layoutConfig__.attrs },
       class: __layoutConfig__.class,
-      style: __layoutConfig__.style
+      style: formConfig.isShow === false ? `display:none;${__layoutConfig__.style}` : __layoutConfig__.style
     },
     [
       h(
@@ -90,9 +90,11 @@ export function renderItem(h: Vue.CreateElement, formConfig: FormElemntConfig, f
 
 export function renderCollection(h: Vue.CreateElement, formConfigList: FormElemntConfig[]): Vue.VNode[] {
   let { formMap } = this;
-  return formConfigList.map(formConfig => {
-    return renderChild.call(this, h, formConfig, formConfigList, formMap);
-  });
+  return formConfigList
+    .map(formConfig => {
+      return formConfig.isRender === false ? null : renderChild.call(this, h, formConfig, formConfigList, formMap);
+    })
+    .fill((v: VNode | null) => !!v);
 }
 
 export function renderChild(h: Vue.CreateElement, formConfig: FormElemntConfig, formConfigList: any, formMap: any): Vue.VNode {
