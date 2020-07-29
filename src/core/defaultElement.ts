@@ -179,6 +179,24 @@ const initComponentsConfig: IComponentService[] = [
     type: EComponentType.DefineComponents,
     document: "https://element.eleme.cn/#/zh-CN/component/layout",
     controlPanel: null
+  },
+  {
+    name: "富文本框",
+    tag: "Tinymce",
+    icon: "textarea",
+    attrs: {
+      menubar: "file edit insert view format table",
+      height: 360,
+      width: "auto",
+      language: "zh_CN",
+      toolbar: [
+        "searchreplace fontselect fontsizeselect bold italic underline strikethrough alignleft aligncenter alignright outdent indent  blockquote undo redo removeformat subscript superscript code codesample",
+        "hr bullist numlist link image charmap preview anchor pagebreak insertdatetime media table emoticons forecolor backcolor fullscreen"
+      ]
+    },
+    type: EComponentType.DefineComponents,
+    document: "https://element.eleme.cn",
+    controlPanel: null
   }
 ];
 

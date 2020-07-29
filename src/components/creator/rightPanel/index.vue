@@ -16,6 +16,9 @@
                 <el-collapse-item title="通用属性" name="normal">
                   <common-panel v-model="activeData" />
                 </el-collapse-item>
+                <el-collapse-item title="组件属性" name="attrs">
+                  <component :is="currentComponentName" v-model="activeData.__controlConfig__.attrs" />
+                </el-collapse-item>
                 <el-collapse-item title="Col Attributes" name="3">
                   <el-col-panel v-model="activeData.__layoutConfig__.props" />
                 </el-collapse-item>
@@ -26,9 +29,6 @@
                   <elInputPanel v-model="activeData.__controlConfig__.props" v-if="activeData.tagName === 'el-input'" />
                   <elSelectPanel v-model="activeData.__controlConfig__.props" v-if="activeData.tagName === 'LElSelect'" />
                 </el-collapse-item> -->
-                <el-collapse-item title="组件属性" name="attrs">
-                  <component :is="currentComponentName" v-model="activeData.__controlConfig__.attrs" />
-                </el-collapse-item>
               </template>
               <template v-else>
                 <el-collapse-item title="Col Attributes" name="13">
@@ -71,6 +71,7 @@ import elSelectPanel from "./elSelectPanel";
 import elDatePicker from "./elDatePicker.vue";
 import formApiValid from "./formApiValid.vue";
 import commonPanel from "./commonPanel";
+import TinymcePanel from "./TinymcePanel";
 export default {
   props: ["formConf", "activeData", "formApiValid"],
   components: {
@@ -82,7 +83,8 @@ export default {
     elRowPanel,
     "c-el-input": elInputPanel,
     "c-LElSelect": elSelectPanel,
-    "c-el-date-picker": elDatePicker
+    "c-el-date-picker": elDatePicker,
+    "c-Tinymce": TinymcePanel
   },
   data() {
     return {
