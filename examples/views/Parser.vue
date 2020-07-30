@@ -61,7 +61,7 @@ export default {
 }
 $form-bg: #13232f;
 .form {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 1em;
 }
