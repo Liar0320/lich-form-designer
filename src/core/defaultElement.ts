@@ -195,7 +195,7 @@ const initComponentsConfig: IComponentService[] = [
       ]
     },
     type: EComponentType.DefineComponents,
-    document: "https://element.eleme.cn",
+    document: "https://www.tiny.cloud",
     controlPanel: null
   }
 ];
